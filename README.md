@@ -25,7 +25,7 @@ Before you begin, ensure you have the following installed on your machine:
 1. Clone the repository:
 
 ```sh
-git clone https://github.com/your-username/sass-custom-library.git
+git clone https://github.com/panucci-juggernaut/sass-custom-library.git
 cd sass-custom-library
 ```
 
