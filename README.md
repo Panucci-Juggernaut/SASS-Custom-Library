@@ -25,7 +25,7 @@ Before you begin, ensure you have the following installed on your machine:
 1. Clone the repository:
 
 ```sh
-git clone https://github.com/panucci-juggernaut/sass-custom-library.git
+git clone https://github.com/your-username/sass-custom-library.git
 cd sass-custom-library
 ```
 
@@ -62,9 +62,7 @@ You can now use the provided classes in your HTML to style your elements. For ex
 
 Panucci is built with SASS, making it easy to customize. You can modify the SASS variables to change the default styles.
 
-### Method 1: Direct Modification
-
-#### Changing Colors
+### Changing Colors
 
 To change the primary color, update the `$primary` variable in `_variables.scss`:
 
@@ -72,7 +70,7 @@ To change the primary color, update the `$primary` variable in `_variables.scss`
 $primary: #ff5733 !default;
 ```
 
-#### Adding New Colors
+### Adding New Colors
 
 To add a new color, update the `$colors` map in `_variables.scss`:
 
@@ -84,47 +82,6 @@ $colors: (
   "info": $info,
   "new-color": #123456,
 );
-```
-
-### Method 2: Using as a Library
-
-You can also use Panucci as a library in your own SASS files:
-
-1. Create a new SASS file (e.g., `styles.scss`):
-
-```scss
-// Import the panucci library
-@use 'panucci' with (
-  $primary: #ff5733,
-  $secondary: #33ff57,
-  $error: #ff3333,
-  // Override any other variables here
-);
-
-// Add your custom styles
-.custom-component {
-  @extend .card;
-  background-color: lighten($primary, 10%);
-}
-```
-
-2. Update your gulpfile.js to watch this new file:
-
-```javascript
-const { src, dest, watch, series } = require('gulp');
-const sass = require('gulp-sass')(require('sass'));
-
-function buildStyles() {
-  return src(['panucci/**/*.scss', 'styles.scss'])
-    .pipe(sass())
-    .pipe(dest('css'));
-}
-
-function watchTask() {
-  watch(['panucci/**/*.scss', 'styles.scss'], buildStyles);
-}
-
-exports.default = series(buildStyles, watchTask);
 ```
 
 ## Extending the Library
